@@ -1754,3 +1754,118 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*
+#Advantages of org 
+ */
+  /* Section background */
+  .advantages {
+    background-color: #000;
+    color: white;
+  }
+
+  /* Card styling */
+  .advantage-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 2rem;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Card overlay for blending */
+  .advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Adjust transparency for the blend */
+    z-index: 1;
+  }
+
+  /* Content positioning and text color */
+  .advantage-card i,
+  .advantage-card h4,
+  .advantage-card p {
+    z-index: 2;
+    position: relative;
+  }
+
+  /* Icons */
+  .advantage-card i {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+.adv-cards-1 {
+  background-image: url('/assets/img/advs/handshake-min.jpeg');
+}
+
+.adv-cards-2 {
+  background-image: url('/assets/img/advs/wires-min.jpg');
+}
+
+.adv-cards-3 {
+  background-image: url('/assets/img/advs/gears_hand-min.jpg');
+}
+
+.adv-cards-4 {
+  background-image: url('/assets/img/advs/server-room-min.jpg');
+}
+
+.adv-cards-5 {
+  background-image: url('/assets/img/advs/digitalization-min.jpg');
+}
+
+.adv-cards-6 {
+  background-image: url('/assets/img/advs/custom_sol-min.jpg');
+}
+
+.adv-cards-7 {
+  background-image: url('/assets/img/advs/workflow-min.jpg');
+}
+
+.adv-cards-8 {
+  background-image: url('/assets/img/advs/networking-min.jpg');
+}
+
+.adv-cards-9 {
+  background-image: url('/assets/img/advs/hybridcloud_dep-min.png');
+}
+
+.adv-cards-10 {
+  background-image: url('/assets/img/advs/vpn-min.jpg');
+}
+
+.adv-cards-11 {
+  background-image: url('/assets/img/advs/lcs.jpg');
+}
+
+.adv-cards-12 {
+  background-image: url('/assets/img/advs/hpc-min.jpg');
+}
+
+
+  /* Checkmark Style */
+  .checkmark {
+    width: 30px;
+    height: 30px;
+    background-color: #10bc69;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 1.2rem;
+  }
+
