@@ -1755,102 +1755,60 @@ section,
   /* Add your styles here */
 }
 
-/*
-#Advantages of org 
- */
-  /* Section background */
-  .advantages {
-    background-color: #000;
-    color: white;
-  }
-
-  /* Card styling */
-  .advantage-card {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-    overflow: hidden;
-    padding: 2rem;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Card overlay for blending */
-  .advantage-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjust transparency for the blend */
-    z-index: 1;
-  }
-
-  /* Content positioning and text color */
-  .advantage-card i,
-  .advantage-card h4,
-  .advantage-card p {
-    z-index: 2;
-    position: relative;
-  }
-
-  /* Icons */
-  .advantage-card i {
-    color: white;
-    margin-bottom: 1rem;
-  }
-
-.adv-cards-1 {
-  background-image: url('../../assets/img/advs/handshake-min.jpeg');
+/* Card styling */
+.advantage-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--background-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+.advantage-card:hover{
+  background-color: var(--accent-color);
+}
+/* Card image section */
+.card-image {
+  flex: 1;
+  overflow: hidden;
 }
 
-.adv-cards-2 {
-  background-image: url('../../assets/img/advs/wires-min.jpg');
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.adv-cards-3 {
-  background-image: url('../../assets/img/advs/gears_hand-min.jpg');
+/* Card content section */
+.card-content {
+  padding: 1rem;
+  background-color: var(--background-color); /* White background */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.adv-cards-4 {
-  background-image: url('../../assets/img/advs/server-room-min.jpg');
+.card-content h4{
+  color: var(--heading-color);
+  font-weight: 600;
+}
+.card-content p {
+  margin: 0.5rem 0;
+  transition: color 0.3s ease-in-out;
 }
 
-.adv-cards-5 {
-  background-image: url('../../assets/img/advs/digitalization-min.jpg');
+/* Hover effect: content lifts more */
+.advantage-card:hover .card-content {
+  transform: translateY(-0.5rem); /* Lift content portion more */
 }
 
-.adv-cards-6 {
-  background-image: url('../../assets/img/advs/custom_sol-min.jpg');
-}
-
-.adv-cards-7 {
-  background-image: url('../../assets/img/advs/workflow-min.jpg');
-}
-
-.adv-cards-8 {
-  background-image: url('../../assets/img/advs/networking-min.jpg');
-}
-
-.adv-cards-9 {
-  background-image: url('../../assets/img/advs/hybridcloud_dep-min.png');
-}
-
-.adv-cards-10 {
-  background-image: url('../../assets/img/advs/vpn-min.jpg');
-}
-
-.adv-cards-11 {
-  background-image: url('../../assets/img/advs/lcs.jpg');
-}
-
-.adv-cards-12 {
-  background-image: url('../../assets/img/advs/hpc-min.jpg');
+/* Hover effect: text changes color */
+.advantage-card:hover .card-content h4, 
+.advantage-card:hover .card-content p {
+  background-color: var(--background-color);
 }
 
 
