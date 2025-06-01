@@ -12,29 +12,41 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Ubuntu",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Ubuntu", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #5f687b; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #10bc69; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #444444;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #5f687b;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #10bc69;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #5f687b;  /* The default color of the main navmenu links */
-  --nav-hover-color: #10bc69; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #5f687b; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #10bc69; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #5f687b;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #10bc69;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #5f687b;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #10bc69;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -525,6 +537,17 @@ h6 {
   .mobile-nav-active .navmenu>ul {
     display: block;
   }
+
+  /* 
+  .navmenu .dropdown:hover>ul,
+  .navmenu .dropdown:focus-within>ul {
+    display: block;
+  }
+
+  .navmenu .dropdown:hover>a,
+  .navmenu .dropdown:focus-within>a {
+    color: var(--nav-dropdown-hover-color);
+  } */
 }
 
 /*--------------------------------------------------------------
@@ -1768,9 +1791,11 @@ section,
   transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
 }
-.advantage-card:hover{
+
+.advantage-card:hover {
   background-color: var(--accent-color);
 }
+
 /* Card image section */
 .card-image {
   flex: 1;
@@ -1786,15 +1811,17 @@ section,
 /* Card content section */
 .card-content {
   padding: 1rem;
-  background-color: var(--background-color); /* White background */
+  background-color: var(--background-color);
+  /* White background */
   text-align: center;
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.card-content h4{
+.card-content h4 {
   color: var(--heading-color);
   font-weight: 600;
 }
+
 .card-content p {
   margin: 0.5rem 0;
   transition: color 0.3s ease-in-out;
@@ -1802,28 +1829,136 @@ section,
 
 /* Hover effect: content lifts more */
 .advantage-card:hover .card-content {
-  transform: translateY(-0.5rem); /* Lift content portion more */
+  transform: translateY(-0.5rem);
+  /* Lift content portion more */
 }
 
 /* Hover effect: text changes color */
-.advantage-card:hover .card-content h4, 
+.advantage-card:hover .card-content h4,
 .advantage-card:hover .card-content p {
   background-color: var(--background-color);
 }
 
 
-  /* Checkmark Style */
-  .checkmark {
-    width: 30px;
-    height: 30px;
-    background-color: #10bc69;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    margin-left: 1.2rem;
-  }
+/* Checkmark Style */
+.checkmark {
+  width: 30px;
+  height: 30px;
+  background-color: #10bc69;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 1.2rem;
+}
 
+.custom-card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon-container {
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+.icon-container i {
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+.content-container {
+  flex-grow: 1;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  /* Adjust as needed */
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu .column {
+  flex: 1;
+  /* Makes all columns equal width */
+  padding: 0 10px;
+}
+
+.dropdown-menu .column a {
+  display: block;
+  padding: 5px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.dropdown-menu .column a:hover {
+  color: #007bff;
+  /* Adjust hover color as needed */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  width: 600px;
+  /* Adjust as needed */
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu {
+  display: flex;
+  /* Ensures the columns appear side by side */
+  flex-direction: row;
+  gap: 20px;
+  /* Adds spacing between columns */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+  /* Ensures the menu appears on hover */
+}
+
+.acl-card {
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  border: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.acl-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.acl-card h5 {
+  color: var(--accent-color)
+}
