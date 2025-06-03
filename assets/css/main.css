@@ -1788,12 +1788,12 @@ section,
   overflow: hidden;
   background: var(--background-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .advantage-card:hover {
-  background-color: var(--accent-color);
+  background-color: var(--background-color);
 }
 
 /* Card image section */
@@ -1814,23 +1814,28 @@ section,
   background-color: var(--background-color);
   /* White background */
   text-align: center;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .card-content h4 {
   color: var(--heading-color);
   font-weight: 600;
+  transition: color 0.2s ease-in-out;
 }
 
 .card-content p {
   margin: 0.5rem 0;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 /* Hover effect: content lifts more */
 .advantage-card:hover .card-content {
-  transform: translateY(-0.5rem);
+  transform: translateY(-1rem);
   /* Lift content portion more */
+}
+
+.advantage-card:hover .card-content h4 {
+  color: var(--accent-color);
 }
 
 /* Hover effect: text changes color */
@@ -1844,7 +1849,7 @@ section,
 .checkmark {
   width: 30px;
   height: 30px;
-  background-color: #10bc69;
+  background-color: var(--accent-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1961,4 +1966,28 @@ section,
 
 .acl-card h5 {
   color: var(--accent-color)
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+/* Product page design css */
+.product-card {
+  height: 700px;
+}
+
+.product-card-body ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2;
+}
+
+.product-card-body i {
+  color: var(--accent-color);
+  margin-right: .5rem;
 }
