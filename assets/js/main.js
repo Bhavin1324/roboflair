@@ -278,10 +278,51 @@
    */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+      // let config = JSON.parse(
+      //   swiperElement.querySelector(".swiper-config").innerHTML.trim()
+      // );
+      let config = {
+        loop: true,
+        speed: 600,
+        autoplay: {
+          delay: 2000,
+        },
+        slidesPerView: 3,
+        grid: {
+          rows: 2,
+        },
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 2,
+            grid: { rows: 2 },
+          },
+          576: {
+            slidesPerView: 2,
+            grid: { rows: 2 },
+          },
 
+          768: {
+            slidesPerView: 3,
+            grid: { rows: 2 },
+          },
+
+          992: {
+            slidesPerView: 3,
+            grid: { rows: 2 },
+          },
+
+          1200: {
+            slidesPerView: 4,
+            grid: { rows: 2 },
+          },
+        },
+      };
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
       } else {

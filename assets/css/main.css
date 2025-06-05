@@ -12,7 +12,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Ubuntu", sans-serif;
 }
@@ -31,6 +33,7 @@
   /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff;
   /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --muted-white: #f9f9f9;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -78,8 +81,8 @@
 }
 
 /*--------------------------------------------------------------
-# General Styling & Shared Classes
---------------------------------------------------------------*/
+  # General Styling & Shared Classes
+  --------------------------------------------------------------*/
 body {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -108,7 +111,7 @@ h6 {
 }
 
 /* PHP Email Form Messages
-------------------------------*/
+  ------------------------------*/
 .php-email-form .error-message {
   display: none;
   background: #df1529;
@@ -160,11 +163,14 @@ h6 {
 }
 
 /* Pulsating Play Button
-------------------------------*/
+  ------------------------------*/
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  background: radial-gradient(
+    var(--accent-color) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
+  );
   border-radius: 50%;
   display: block;
   position: relative;
@@ -239,8 +245,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Header
---------------------------------------------------------------*/
+  # Global Header
+  --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -303,8 +309,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
+  # Navigation Menu
+  --------------------------------------------------------------*/
 /* Navmenu - Desktop */
 @media (min-width: 1200px) {
   .navmenu {
@@ -349,7 +355,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -388,11 +394,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -404,7 +410,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -507,7 +513,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -534,25 +540,25 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 
   /* 
-  .navmenu .dropdown:hover>ul,
-  .navmenu .dropdown:focus-within>ul {
-    display: block;
-  }
-
-  .navmenu .dropdown:hover>a,
-  .navmenu .dropdown:focus-within>a {
-    color: var(--nav-dropdown-hover-color);
-  } */
+    .navmenu .dropdown:hover>ul,
+    .navmenu .dropdown:focus-within>ul {
+      display: block;
+    }
+  
+    .navmenu .dropdown:hover>a,
+    .navmenu .dropdown:focus-within>a {
+      color: var(--nav-dropdown-hover-color);
+    } */
 }
 
 /*--------------------------------------------------------------
-# Global Footer
---------------------------------------------------------------*/
+  # Global Footer
+  --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
@@ -587,7 +593,7 @@ h6 {
   border-color: var(--accent-color);
 }
 
-.footer .footer-newsletter .newsletter-form input[type=email] {
+.footer .footer-newsletter .newsletter-form input[type="email"] {
   border: 0;
   padding: 4px;
   width: 100%;
@@ -595,11 +601,11 @@ h6 {
   color: var(--default-color);
 }
 
-.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
+.footer .footer-newsletter .newsletter-form input[type="email"]:focus-visible {
   outline: none;
 }
 
-.footer .footer-newsletter .newsletter-form input[type=submit] {
+.footer .footer-newsletter .newsletter-form input[type="submit"] {
   border: 0;
   font-size: 16px;
   padding: 0 20px;
@@ -610,7 +616,7 @@ h6 {
   border-radius: 50px;
 }
 
-.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
+.footer .footer-newsletter .newsletter-form input[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -694,7 +700,8 @@ h6 {
 
 .footer .copyright {
   padding: 25px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright p {
@@ -707,8 +714,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Preloader
---------------------------------------------------------------*/
+  # Preloader
+  --------------------------------------------------------------*/
 #preloader {
   position: fixed;
   inset: 0;
@@ -742,8 +749,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Scroll Top Button
---------------------------------------------------------------*/
+  # Scroll Top Button
+  --------------------------------------------------------------*/
 .scroll-top {
   position: fixed;
   visibility: hidden;
@@ -776,8 +783,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
+  # Disable aos animation delay on mobile devices
+  --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
@@ -785,8 +792,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Page Titles & Breadcrumbs
---------------------------------------------------------------*/
+  # Global Page Titles & Breadcrumbs
+  --------------------------------------------------------------*/
 .page-title {
   --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
   color: var(--default-color);
@@ -810,11 +817,11 @@ h6 {
   font-weight: 400;
 }
 
-.page-title .breadcrumbs ol li+li {
+.page-title .breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.page-title .breadcrumbs ol li+li::before {
+.page-title .breadcrumbs ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -822,8 +829,8 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Global Sections
---------------------------------------------------------------*/
+  # Global Sections
+  --------------------------------------------------------------*/
 section,
 .section {
   color: var(--default-color);
@@ -834,7 +841,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -842,8 +848,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Global Section Titles
---------------------------------------------------------------*/
+  # Global Section Titles
+  --------------------------------------------------------------*/
 .section-title {
   text-align: center;
   padding: 30px 0;
@@ -892,8 +898,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
+  # Hero Section
+  --------------------------------------------------------------*/
 .hero {
   width: 100%;
   min-height: 70vh;
@@ -994,8 +1000,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Featured Services Section
---------------------------------------------------------------*/
+  # Featured Services Section
+  --------------------------------------------------------------*/
 .featured-services {
   --surface-color: color-mix(in srgb, var(--default-color), transparent 96%);
   padding-top: 0;
@@ -1044,8 +1050,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# About Section
---------------------------------------------------------------*/
+  # About Section
+  --------------------------------------------------------------*/
 .about .content h3 {
   font-size: 1.75rem;
   font-weight: 700;
@@ -1079,8 +1085,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Stats Section
---------------------------------------------------------------*/
+  # Stats Section
+  --------------------------------------------------------------*/
 .stats {
   padding-top: 0;
 }
@@ -1107,8 +1113,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
+  # Services Section
+  --------------------------------------------------------------*/
 .services .service-item {
   background-color: var(--surface-color);
   text-align: center;
@@ -1159,8 +1165,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Portfolio Section
---------------------------------------------------------------*/
+  # Portfolio Section
+  --------------------------------------------------------------*/
 .portfolio .portfolio-filters {
   padding: 0;
   margin: 0 auto 20px auto;
@@ -1257,8 +1263,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
+  # Testimonials Section
+  --------------------------------------------------------------*/
 .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
   overflow: hidden;
@@ -1340,12 +1346,12 @@ section,
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+  background-color: var(--accent-color) !important;
 }
 
 /*--------------------------------------------------------------
-# Call To Action Section
---------------------------------------------------------------*/
+  # Call To Action Section
+  --------------------------------------------------------------*/
 .call-to-action {
   padding: 80px 0;
   position: relative;
@@ -1405,8 +1411,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Team Section
---------------------------------------------------------------*/
+  # Team Section
+  --------------------------------------------------------------*/
 .team .member {
   position: relative;
 }
@@ -1475,8 +1481,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
+  # Contact Section
+  --------------------------------------------------------------*/
 .contact .info-wrap {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -1538,8 +1544,8 @@ section,
   }
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
+.contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="email"],
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
@@ -1550,19 +1556,19 @@ section,
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type="text"]:focus,
+.contact .php-email-form input[type="email"]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type="text"]::placeholder,
+.contact .php-email-form input[type="email"]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1571,13 +1577,13 @@ section,
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details Section
---------------------------------------------------------------*/
+  # Portfolio Details Section
+  --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
 }
@@ -1587,14 +1593,20 @@ section,
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: color-mix(in srgb, var(--default-color), transparent 85%);
   opacity: 1;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
 }
 
@@ -1609,7 +1621,8 @@ section,
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .portfolio-details .portfolio-info ul {
@@ -1618,7 +1631,7 @@ section,
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1638,22 +1651,23 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Service Details Section
---------------------------------------------------------------*/
+  # Service Details Section
+  --------------------------------------------------------------*/
 .service-details .service-box {
   background-color: var(--surface-color);
   padding: 20px;
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.service-details .service-box+.service-box {
+.service-details .service-box + .service-box {
   margin-top: 30px;
 }
 
 .service-details .service-box h4 {
   font-size: 20px;
   font-weight: 700;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
+  border-bottom: 2px solid
+    color-mix(in srgb, var(--default-color), transparent 92%);
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
@@ -1702,7 +1716,8 @@ section,
   align-items: center;
   padding: 10px 0;
   transition: 0.3s;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .service-details .download-catalog a:first-child {
@@ -1772,8 +1787,8 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
+  # Starter Section Section
+  --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
 }
@@ -1843,7 +1858,6 @@ section,
 .advantage-card:hover .card-content p {
   background-color: var(--background-color);
 }
-
 
 /* Checkmark Style */
 .checkmark {
@@ -1965,7 +1979,7 @@ section,
 }
 
 .acl-card h5 {
-  color: var(--accent-color)
+  color: var(--accent-color);
 }
 
 .text-accent {
@@ -1978,13 +1992,20 @@ section,
 
 /* Product page design css */
 .product-card {
+  position: relative;
   height: 700px;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: all 0.2s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.01);
+  transition: color 0.3 ease-in-out;
+}
+
+.product-card:hover h5 {
+  color: var(--accent-color);
+  transition: color 0.2s ease-in-out;
 }
 
 .product-card-body ul {
@@ -1995,7 +2016,7 @@ section,
 
 .product-card-body i {
   color: var(--accent-color);
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .org-slide img {
@@ -2009,13 +2030,70 @@ section,
   height: 200px;
 }
 
+/* Contains the styles of Projects page */
 .projects-card {
-  color: var(--default-color);
+  position: relative;
+  background: var(--muted-white);
   height: 300px;
-  transition: color 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.4rem;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* This after style is applicable on both cards, products and projects */
+.projects-card::after,
+.product-card::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  content: "";
+  width: 0px;
+  height: 0.3rem;
+  background-color: var(--accent-color);
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+.projects-card:hover::after,
+.product-card:hover::after {
+  width: 100%;
+}
+
+.projects-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.12);
 }
 
 .projects-card:hover h3 {
   color: var(--accent-color);
   transition: color 0.3s ease-in-out;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  color: var(--default-color);
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}
+
+.card-location {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.card-footer {
+  margin-top: 15px;
+  text-align: right;
 }
