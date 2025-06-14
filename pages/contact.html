@@ -170,7 +170,7 @@
                       id="phone-no-field"
                       placeholder="000-000-0000"
                       required=""
-                      pattern="[0-9]{10,}"
+                      pattern="[0-9]{10}"
                       title="Enter a valid 10-digit contact number"
                     />
                   </div>
@@ -181,8 +181,9 @@
                       id="inquiry-field"
                       aria-label="inquiry-for"
                       name="inquiry"
+                      required
                     >
-                      <option selected>Select Inquiry Type</option>
+                      <option value="" selected disabled>Select Inquiry Type</option>
                       <option value="services">Services</option>
                       <option value="products">Products</option>
                       <option value="amc">AMC</option>
