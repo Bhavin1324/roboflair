@@ -3,3 +3,4 @@
 *.example.txt
 # Local Netlify folder
 .netlify
+*.example.toml

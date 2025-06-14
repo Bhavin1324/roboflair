@@ -4,14 +4,6 @@ node_bundler = "esbuild"
 included_files =  ["functions/templates/*"]
 external_node_modules = ["dotenv","ejs","nodemailer","node-fetch"]
 
-[functions.environment]
-SMTP_HOST="smtp.gmail.com"
-SMTP_PORT="465"
-GMAIL_USER="roboflair@gmail.com"
-GMAIL_AP="zrix aeet jnzu tngu"
-MAIL_TO="sales@roboflair.com"
-RECAPTCHA_SECRET_KEY="6LdCiFgrAAAAABarhLz-yg-d5CmAVTuP1_6qRU0k"
-
 [[redirects]]
 from = "/roboflair/api/*"
 to = "/.netlify/functions/:splat"
