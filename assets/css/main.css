@@ -1487,6 +1487,7 @@ section,
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  height: 100%;
 }
 
 @media (max-width: 575px) {
@@ -1567,8 +1568,30 @@ section,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
+/* for input select options */
+.contact .php-email-form select {
+  outline: none;
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  padding: 11px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+}
 
-.contact .php-email-form button[type="submit"] {
+.contact .php-email-form select:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form select option {
+  color: var(--default-color);
+  background-color: var(--surface-color);
+}
+
+.contact .php-email-form button  {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1577,7 +1600,7 @@ section,
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type="submit"]:hover {
+.contact .php-email-form button:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 

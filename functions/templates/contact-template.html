@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roboflair | New Contact Form Inquiry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .field {
+            margin-bottom: 15px;
+        }
+        .field strong {
+            display: inline-block;
+            width: 120px;
+            color: #555;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #777;
+            border-top: 1px solid #eaeaea;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>New Contact Form Inquiry</h1>
+        </div>
+        <div class="content">
+            <h2>Details</h2>
+            <div class="field">
+                <strong>Name:</strong> <%= name %>
+            </div>
+            <div class="field">
+                <strong>Email:</strong> <%= email %>
+            </div>
+            <div class="field">
+                <strong>Phone:</strong> <%= phone %>
+            </div>
+            <div class="field">
+                <strong>Inquiry Type:</strong> <%= inquiry %>
+            </div>
+            <div class="field">
+                <strong>Organization:</strong> <%= organization %>
+            </div>
+            <div class="field">
+                <strong>Subject:</strong> <%= subject %>
+            </div>
+            <div class="field">
+                <strong>Message:</strong>
+                <p><%= message %></p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>This email contains information from your website's contact form.</p>
+        </div>
+    </div>
+</body>
+</html>

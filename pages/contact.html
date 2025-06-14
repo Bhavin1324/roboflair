@@ -40,6 +40,12 @@
 
     <!-- Main CSS File -->
     <link href="/assets/css/main.min.css" rel="stylesheet" />
+    <!-- Google recaptcha cdn -->
+    <script
+      src="https://www.google.com/recaptcha/api.js?render=explicit"
+      async
+      defer
+    ></script>
   </head>
 
   <body>
@@ -111,7 +117,7 @@
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1884.9395564361107!2d72.85739812148496!3d19.112958509373694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c833ff7982e7%3A0xc98d4020d4249607!2sDorr%20Oliver%20House%2C%20Parshiwada%2C%20Chakala%2C%20Andheri%20East%2C%20Mumbai%2C%20Maharashtra%20400053!5e0!3m2!1sen!2sin!4v1745651205520!5m2!1sen!2sin"
                   frameborder="0"
-                  style="border: 0; width: 100%; height: 270px"
+                  style="border: 0; width: 100%; height: 350px"
                   allowfullscreen=""
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
@@ -120,19 +126,13 @@
             </div>
             <div class="col-lg-7" id="contactForm">
               <form
+                action="/roboflair/api/send-email"
                 name="contact"
-                method="POST"
+                method="post"
                 class="php-email-form"
                 data-aos="fade-up"
                 data-aos-delay="200"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
               >
-                <input type="hidden" name="form-name" value="contact" />
-                <p hidden>
-                  <label>Don’t fill this out: <input name="bot-field" /></label>
-                </p>
-
                 <div class="row gy-4">
                   <div class="col-md-6">
                     <label for="name-field" class="pb-2">Your Name</label>
@@ -141,7 +141,9 @@
                       name="name"
                       id="name-field"
                       class="form-control"
+                      placeholder="John Doe"
                       required=""
+                      minlength="3"
                     />
                   </div>
 
@@ -152,18 +154,61 @@
                       class="form-control"
                       name="email"
                       id="email-field"
+                      placeholder="example@email.com"
                       required=""
+                      pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                      title="Please enter valid email address !"
                     />
                   </div>
 
-                  <div class="col-md-12">
+                  <div class="col-md-6">
+                    <label for="phone-no-field" class="pb-2">Phone No</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="phone"
+                      id="phone-no-field"
+                      placeholder="000-000-0000"
+                      required=""
+                      pattern="[0-9]{10,}"
+                      title="Enter a valid 10-digit contact number"
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="inquiry-field" class="pb-2">Inquiry</label>
+                    <select
+                      id="inquiry-field"
+                      aria-label="inquiry-for"
+                      name="inquiry"
+                    >
+                      <option selected>Select Inquiry Type</option>
+                      <option value="services">Services</option>
+                      <option value="products">Products</option>
+                      <option value="amc">AMC</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="organization-field" class="pb-2"
+                      >Your Organization</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="organization"
+                      id="organization-field"
+                      placeholder="XYZX Pvt. Ltd."
+                    />
+                  </div>
+                  <div class="col-md-6">
                     <label for="subject-field" class="pb-2">Subject</label>
                     <input
                       type="text"
                       class="form-control"
                       name="subject"
                       id="subject-field"
-                      required=""
+                      placeholder="Inquiry: IT Infrastructure Services"
                     />
                   </div>
 
@@ -175,6 +220,8 @@
                       rows="10"
                       id="message-field"
                       required=""
+                      placeholder="What would you like to ask us?"
+                      minlength="10"
                     ></textarea>
                   </div>
 
@@ -184,8 +231,10 @@
                     <div class="sent-message">
                       Your message has been sent. Thank you!
                     </div>
-
-                    <button type="submit">Send Message</button>
+                    <div id="captcha-container"></div>
+                    <button id="submit" class="submit-button">
+                      Send Message
+                    </button>
                   </div>
                 </div>
               </form>
@@ -210,7 +259,6 @@
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/php-email-form/validate.js"></script>
     <script src="../assets/vendor/aos/aos.js"></script>
     <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
     <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -219,6 +267,8 @@
     <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <!-- Main JS File -->
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
     <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/vendor/email-form/ContactFunctions.min.js"></script>
   </body>
 </html>
