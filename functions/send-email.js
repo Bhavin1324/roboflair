@@ -94,7 +94,7 @@ function validateFormData({
   if (!phone || !/^\d{10}$/.test(phone))
     errors.push("Invalid phone number. Must be 10 digits.");
   if (!inquiry || !["services", "products", "amc"].includes(inquiry))
-    errors.push("Invalid inquiry type.");
+    errors.push("Invalid inquiry type. Please select inquiry type.");
   // if (!subject || subject.length < 5)
   //   errors.push("Subject must be at least 5 characters.");
   if (!message || message.length < 10)
@@ -111,7 +111,6 @@ function validationErrorResponse(errors) {
 }
 
 async function verifyCaptcha(token) {
-  console.log(process.env.RECAPTCHA_SECRET_KEY);
   const response = await fetch(
     `https://www.google.com/recaptcha/api/siteverify`,
     {
@@ -124,7 +123,6 @@ async function verifyCaptcha(token) {
     }
   );
   const result = await response.json();
-  console.log("Recaptcha result: ", result)
   return result?.success;
 }
 

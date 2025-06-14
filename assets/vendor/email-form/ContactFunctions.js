@@ -79,6 +79,7 @@
       .then((response) => {
         response.json().then((res) => {
           thisForm.querySelector(".loading").classList.remove("d-block");
+          grecaptcha.reset(captchaWidgetId);
           if (response.ok) {
             thisForm.querySelector(".sent-message").classList.add("d-block");
             thisForm.reset();
