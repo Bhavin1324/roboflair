@@ -8,8 +8,8 @@
     <meta name="keywords" content="" />
 
     <!-- Favicons -->
-    <link href="../assets/img/favicon.ico" rel="icon" />
-    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="/assets/img/favicon.ico" rel="icon" />
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -21,20 +21,20 @@
 
     <!-- Vendor CSS Files -->
     <link
-      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      href="/assets/vendor/bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link
-      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="/assets/vendor/aos/aos.css" rel="stylesheet" />
     <link
-      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      href="/assets/vendor/glightbox/css/glightbox.min.css"
       rel="stylesheet"
     />
     <link
-      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      href="/assets/vendor/swiper/swiper-bundle.min.css"
       rel="stylesheet"
     />
 
@@ -144,6 +144,9 @@
                       placeholder="John Doe"
                       required=""
                       minlength="3"
+                      maxlength="50"
+                      pattern=".*\S.*"
+                      title="Name must be at least 3 characters and cannot be empty or just whitespace."
                     />
                   </div>
 
@@ -156,6 +159,7 @@
                       id="email-field"
                       placeholder="example@email.com"
                       required=""
+                      maxlength="150"
                       pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
                       title="Please enter valid email address !"
                     />
@@ -170,7 +174,8 @@
                       id="phone-no-field"
                       placeholder="000-000-0000"
                       required=""
-                      pattern="[0-9]{10}"
+                      maxlength="10"
+                      pattern="\d{10}"
                       title="Enter a valid 10-digit contact number"
                     />
                   </div>
@@ -187,6 +192,7 @@
                       <option value="services">Services</option>
                       <option value="products">Products</option>
                       <option value="amc">AMC</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
 
@@ -200,6 +206,7 @@
                       name="organization"
                       id="organization-field"
                       placeholder="XYZX Pvt. Ltd."
+                      maxlength="100"
                     />
                   </div>
                   <div class="col-md-6">
@@ -210,6 +217,7 @@
                       name="subject"
                       id="subject-field"
                       placeholder="Inquiry: IT Infrastructure Services"
+                      maxlength="150"
                     />
                   </div>
 
@@ -222,7 +230,10 @@
                       id="message-field"
                       required=""
                       placeholder="What would you like to ask us?"
-                      minlength="10"
+                      minlength="15"
+                      pattern=".*\S.*"
+                      title="Message must be at least 15 characters and cannot be empty or just whitespace."
+                      maxlength="700"
                     ></textarea>
                   </div>
 
@@ -259,13 +270,13 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/aos/aos.js"></script>
-    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/vendor/aos/aos.js"></script>
+    <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <!-- Main JS File -->
     <script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>

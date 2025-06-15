@@ -2,7 +2,7 @@
 directory = "functions"
 node_bundler = "esbuild"
 included_files =  ["functions/templates/*"]
-external_node_modules = ["dotenv","ejs","nodemailer","node-fetch"]
+external_node_modules = ["dotenv","ejs","nodemailer","node-fetch","sanitize-html"]
 
 [[redirects]]
 from = "/roboflair/api/*"

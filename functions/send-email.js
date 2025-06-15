@@ -3,6 +3,7 @@ const nodemailer = require("nodemailer");
 const ejs = require("ejs");
 const fs = require("fs");
 const path = require("path");
+const sanitizeHtml = require("sanitize-html");
 
 const mail_host = process.env.SMTP_HOST;
 const mail_port = process.env.SMTP_PORT;
@@ -13,7 +14,25 @@ exports.handler = async (event, context) => {
   }
   try {
     // Extract values from payload
-    const payload = JSON.parse(event.body);
+    const rawPayload = JSON.parse(event.body);
+    const sanitizeHtmlOptions = {
+      allowedTags: [], // Allow no tags
+      allowedAttributes: {}, // Allow no attributes
+    };
+
+    const payload = {
+      name: sanitizeHtml(rawPayload.name || "", sanitizeHtmlOptions),
+      email: sanitizeHtml(rawPayload.email || "", sanitizeHtmlOptions),
+      phone: sanitizeHtml(rawPayload.phone || "", sanitizeHtmlOptions),
+      inquiry: sanitizeHtml(rawPayload.inquiry || "", sanitizeHtmlOptions),
+      organization: sanitizeHtml(
+        rawPayload.organization || "",
+        sanitizeHtmlOptions
+      ),
+      subject: sanitizeHtml(rawPayload.subject || "", sanitizeHtmlOptions),
+      message: sanitizeHtml(rawPayload.message || "", sanitizeHtmlOptions),
+      token: rawPayload.token,
+    };
 
     const validationErrors = validateFormData(payload);
 
@@ -87,18 +106,24 @@ function validateFormData({
   token,
 }) {
   const errors = [];
-  if (!name || name.length < 3)
-    errors.push("Name must be at least 3 characters.");
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-    errors.push("Invalid email address.");
+  if (!name || name.trim().length < 3 || name.trim().length > 50)
+    errors.push("Name must be between 3 and 50 characters.");
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 100)
+    errors.push("Invalid email address. Must be less than 100 characters.");
+
   if (!phone || !/^\d{10}$/.test(phone))
     errors.push("Invalid phone number. Must be 10 digits.");
-  if (!inquiry || !["services", "products", "amc"].includes(inquiry))
-    errors.push("Invalid inquiry type. Please select inquiry type.");
-  // if (!subject || subject.length < 5)
-  //   errors.push("Subject must be at least 5 characters.");
-  if (!message || message.length < 10)
-    errors.push("Message must be at least 10 characters.");
+
+  if (!inquiry || !["services", "products", "amc", "other"].includes(inquiry))
+    errors.push("Invalid inquiry type. Please select a valid inquiry type.");
+
+  if (subject.trim() && subject.length > 150)
+    errors.push("Subject must be less than 150 characters.");
+
+  if (!message || message.trim().length < 15 || message.trim().length > 700)
+    errors.push("Message must be between 15 and 700 characters.");
+
   if (!token) errors.push("Captcha token is missing.");
   return errors;
 }
@@ -148,6 +173,8 @@ function generateEmailContent({
     "contact-template-inline.html"
   );
   const template = fs.readFileSync(templatePath, "utf-8");
+  subject = subject.trim() || "New inquiry through contact form";
+  organization = organization.trim() || "Unknown";
   return ejs.render(template, {
     name,
     email,
